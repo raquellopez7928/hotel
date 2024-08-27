@@ -73,24 +73,29 @@ public class Reserva {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    // Método para calcular el valor total de la estadía
+
+    /**
+     * Método para calcular el valor total de la estadía
+     * @return
+     */
     public double calcularValorEstadia() {
         if (fechaEntrada == null || fechaSalidad == null || habitacion == null) {
             System.out.println("Datos incompletos para calcular el valor de la estadía.");
             return 0.0;
         }
+        //se calcula el número de noches que el cliente permanece en el hotel utilizando un 
+        //cronograma entre la fecha Entrada y fecha de Salida
 
-        // Calcular el número de noches entre fechaEntrada y fechaSalida
         long noches = ChronoUnit.DAYS.between(fechaEntrada, fechaSalidad);
-
-        // Obtener el precio por noche de la habitación
         double precioPorNoche = habitacion.getPrecio();
-
-        // Calcular el valor total de la estadía
         double valorTotal = noches * precioPorNoche;
 
         return valorTotal;
     }
+    /**
+     * creación del método to string 
+     * de la clase Reserva
+     */
     @Override
     public String toString() {
         return "Reserva [Habitacion: " + habitacion.getNumero() +

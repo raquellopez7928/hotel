@@ -38,12 +38,10 @@ public class Habitacion {
             servicio.consumir();
         }
     }
-
-    
-/**
- * get atributo numero
- * @return
- */
+    /**
+     * get atributo nombre
+     * @return
+     */
     public int getNumero() {
         return numero;
     }

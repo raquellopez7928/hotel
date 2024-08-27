@@ -11,7 +11,7 @@ public class Cliente {
 
     private String nombre;
     private String numeroIdentificacion;
-    private List<Reserva> reservas;
+    private ArrayList<Reserva> reservas;
     
     public Cliente(String nombre, String numeroIdentificacion) {
         this.nombre = nombre;
@@ -74,7 +74,7 @@ public class Cliente {
  * método set de la lista reservas derivada de la clase Reserva
  * @param reservas
  */    
-    public void setReservas(List<Reserva> reservas) {
+    public void setReservas(ArrayList<Reserva> reservas) {
         this.reservas = reservas;
     }
 /**

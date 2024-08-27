@@ -10,7 +10,7 @@ public class Habitacion {
     private int numero;
     private double precio;
     private TipoHabitacion tipoHabitacion;
-    private List<Servicio> servicios;
+    private ArrayList<Servicio> servicios;
     
 
     public Habitacion(int numero, double precio, TipoHabitacion tipoHabitacion) {
@@ -98,7 +98,7 @@ public class Habitacion {
      * @param servicios
      */
 
-    public void setServicios(List<Servicio> servicios) {
+    public void setServicios(ArrayList<Servicio> servicios) {
         this.servicios = servicios;
     }
     /**

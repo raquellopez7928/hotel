@@ -1,15 +1,23 @@
 package co.edu.uniquindio.poo;
 
-public class Servicio {
+public abstract class Servicio implements Consumible{
     private String nombre;
     private double costo;
+    /**
+     * crea
+     * @param nombre
+     * @param costo
+     */
 
     public Servicio(String nombre, double costo) {
         this.nombre = nombre;
         this.costo = costo;
     }
+    /**
+     * 
+     * @return
+     */
 
-    
     public String getNombre() {
         return nombre;
     }
@@ -25,5 +33,7 @@ public class Servicio {
     public void setCosto(double costo) {
         this.costo = costo;
     }
-
+    // Implementación del método consumir
+    @Override
+    public abstract void consumir();
 }

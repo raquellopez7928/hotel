@@ -13,7 +13,7 @@ public class Habitacion {
     private List<Servicio> servicios;
     
 
-    public Habitacion(int numero, double precio, TipoHabitacion tipoHabitacion, List<Servicio> servicios) {
+    public Habitacion(int numero, double precio, TipoHabitacion tipoHabitacion) {
         this.numero = numero;
         this.precio = precio;
         this.tipoHabitacion = tipoHabitacion;

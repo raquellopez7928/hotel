@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 /**
  * creación de la clase Cliente y su constructor
@@ -12,10 +13,10 @@ public class Cliente {
     private String numeroIdentificacion;
     private List<Reserva> reservas;
     
-    public Cliente(String nombre, String numeroIdentificacion, List<Reserva> reservas) {
+    public Cliente(String nombre, String numeroIdentificacion) {
         this.nombre = nombre;
         this.numeroIdentificacion = numeroIdentificacion;
-        this.reservas = reservas;
+        this.reservas = new ArrayList<>();
     }
     /**
      * método para mostrar las reservas activas en un cliente

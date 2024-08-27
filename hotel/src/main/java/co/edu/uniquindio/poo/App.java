@@ -14,9 +14,13 @@ public class App {
 
         // Crear un cliente
         Cliente cliente1 = new Cliente("Leidy Vanesa Muñoz Bolaños", "1087643301");
+        Cliente cliente2 = new Cliente("Raquel López Aristizábal","1091884575" );
+        Cliente cliente3 = new Cliente("Lawrence Daniel Ospina Lopez", "1114541590");
 
         // Crear una reserva y asociarla a una habitación
         cliente1.crearReserva(habitacion1, LocalDate.now(), LocalDate.now().plusDays(3));
+        cliente2.crearReserva(habitacion2, LocalDate.now(), LocalDate.now().plusDays(4));
+        cliente3.crearReserva(habitacion2, LocalDate.now(), LocalDate.now().plusDays(1));
 
         // Añadir y consumir un servicio en la habitación
         ServicioDeHabitacion servicio1 = new ServicioDeHabitacion("Desayuno", 15.0);
@@ -26,5 +30,8 @@ public class App {
 
         // Listar las reservas y servicios asociados
         cliente1.listarReservasYServicios();
+        cliente2.listarReservasYServicios();
+        cliente3.listarReservasYServicios();
+        
     }
 }

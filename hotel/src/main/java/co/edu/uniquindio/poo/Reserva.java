@@ -12,12 +12,20 @@ public class Reserva {
     private Habitacion habitacion;
     private Cliente cliente;
 
+    /**
+     * método constructor de la clase Reserva
+     * @param fechaEntrada
+     * @param fechaSalidad
+     * @param habitacion
+     * @param cliente
+     */
     public Reserva(LocalDate fechaEntrada, LocalDate fechaSalidad, Habitacion habitacion, Cliente cliente) {
         this.fechaEntrada = fechaEntrada;
         this.fechaSalidad = fechaSalidad;
         this.habitacion = habitacion;
         this.cliente = cliente;
     }
+
     /**
      * get atributo entrada
      * @return
@@ -25,6 +33,7 @@ public class Reserva {
     public LocalDate getFechaEntrada() {
         return fechaEntrada;
     }
+
     /**
      * set atributo fechaEntrada
      * @param fechaEntrada
@@ -32,6 +41,7 @@ public class Reserva {
     public void setFechaEntrada(LocalDate fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
+
     /**
      * get atributo fechaSalida
      * @return
@@ -39,6 +49,7 @@ public class Reserva {
     public LocalDate getFechaSalidad() {
         return fechaSalidad;
     }
+
     /**
      * set fechaSalida
      * @param fechaSalidad
@@ -46,6 +57,7 @@ public class Reserva {
     public void setFechaSalidad(LocalDate fechaSalidad) {
         this.fechaSalidad = fechaSalidad;
     }
+
     /**
      * get habitacion
      * @return
@@ -53,6 +65,7 @@ public class Reserva {
     public Habitacion getHabitacion() {
         return habitacion;
     }
+
     /**
      * set habitacion
      * @param habitacion
@@ -60,12 +73,14 @@ public class Reserva {
     public void setHabitacion(Habitacion habitacion) {
         this.habitacion = habitacion;
     }
+
     /*
      * get cliente
      */
     public Cliente getCliente() {
         return cliente;
     }
+
     /**
      * set cliente
      * @param cliente
@@ -92,6 +107,7 @@ public class Reserva {
 
         return valorTotal;
     }
+    
     /**
      * creación del método to string 
      * de la clase Reserva

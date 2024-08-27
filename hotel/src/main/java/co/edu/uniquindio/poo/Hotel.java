@@ -3,16 +3,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * creación de la clase general Hotel
+ * Creación de la clase general Hotel
  */
 public class Hotel {
     private String nombre;
     private ArrayList<Habitacion>habitaciones;
     
+    /**
+     * método constructor de la clase Hotel
+     * @param nombre
+     */
     public Hotel(String nombre) {
         this.nombre = nombre;
         this.habitaciones=new ArrayList<>();
     }
+
     /**
      * get atributo nombre
      * @return
@@ -20,6 +25,7 @@ public class Hotel {
     public String getNombre() {
         return nombre;
     }
+
     /**
      * set atributo nombre
      * @param nombre
@@ -28,6 +34,7 @@ public class Hotel {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
     /**
      * get lista de habitaciones
      * @return

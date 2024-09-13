@@ -1,4 +1,7 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
+
+import co.edu.uniquindio.poo.model.builder.ReservaBuilder;
+
 import java.time.temporal.ChronoUnit;
 import java.time.LocalDate;
 
@@ -8,20 +11,20 @@ import java.time.LocalDate;
 public class Reserva {
 
     private LocalDate fechaEntrada;
-    private LocalDate fechaSalidad;
+    private LocalDate fechaSalida;
     private Habitacion habitacion;
     private Cliente cliente;
 
     /**
      * método constructor de la clase Reserva
      * @param fechaEntrada
-     * @param fechaSalidad
+     * @param fechaSalida
      * @param habitacion
      * @param cliente
      */
-    public Reserva(LocalDate fechaEntrada, LocalDate fechaSalidad, Habitacion habitacion, Cliente cliente) {
+    public Reserva(LocalDate fechaEntrada, LocalDate fechaSalida, Habitacion habitacion, Cliente cliente) {
         this.fechaEntrada = fechaEntrada;
-        this.fechaSalidad = fechaSalidad;
+        this.fechaSalida = fechaSalida;
         this.habitacion = habitacion;
         this.cliente = cliente;
     }
@@ -46,16 +49,16 @@ public class Reserva {
      * get atributo fechaSalida
      * @return
      */
-    public LocalDate getFechaSalidad() {
-        return fechaSalidad;
+    public LocalDate getFechaSalida() {
+        return fechaSalida;
     }
 
     /**
      * set fechaSalida
      * @param fechaSalidad
      */
-    public void setFechaSalidad(LocalDate fechaSalidad) {
-        this.fechaSalidad = fechaSalidad;
+    public void setFechaSalida(LocalDate fechaSalidad) {
+        this.fechaSalida = fechaSalidad;
     }
 
     /**
@@ -94,18 +97,22 @@ public class Reserva {
      * @return
      */
     public double calcularValorEstadia() {
-        if (fechaEntrada == null || fechaSalidad == null || habitacion == null) {
+        if (fechaEntrada == null || fechaSalida == null || habitacion == null) {
             System.out.println("Datos incompletos para calcular el valor de la estadía.");
             return 0.0;
         }
         //se calcula el número de noches que el cliente permanece en el hotel utilizando un 
         //cronograma entre la fecha Entrada y fecha de Salida
 
-        long noches = ChronoUnit.DAYS.between(fechaEntrada, fechaSalidad);
+        long noches = ChronoUnit.DAYS.between(fechaEntrada, fechaSalida);
         double precioPorNoche = habitacion.getPrecio();
         double valorTotal = noches * precioPorNoche;
 
         return valorTotal;
+    }
+
+    public static ReservaBuilder reservaBuilder(){
+        return new ReservaBuilder();
     }
     
     /**

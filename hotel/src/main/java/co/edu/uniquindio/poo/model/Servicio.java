@@ -1,14 +1,17 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
+
+import co.edu.uniquindio.poo.services.IConsumible;
 
 /**
  * Creación clase Servicio
  */
-public abstract class Servicio implements Consumible{
+public abstract class Servicio implements IConsumible {
     private String nombre;
     private double costo;
 
     /**
      * método constructor de la clase Hotel
+     *
      * @param nombre
      * @param costo
      */
@@ -17,8 +20,11 @@ public abstract class Servicio implements Consumible{
         this.costo = costo;
     }
 
+    public Servicio() {}
+
     /**
      * get atributo nombre
+     *
      * @return
      */
     public String getNombre() {
@@ -27,6 +33,7 @@ public abstract class Servicio implements Consumible{
 
     /**
      * set atributo nombre
+     *
      * @param nombre
      */
     public void setNombre(String nombre) {
@@ -35,6 +42,7 @@ public abstract class Servicio implements Consumible{
 
     /**
      * get atributo costo
+     *
      * @return
      */
     public double getCosto() {
@@ -43,15 +51,13 @@ public abstract class Servicio implements Consumible{
 
     /**
      * set atributo costo
+     *
      * @param costo
      */
     public void setCosto(double costo) {
         this.costo = costo;
     }
-    
-    /**
-     * Implementación del método abstracto implementado de la interface consumir
-     */
-    @Override
-    public abstract void consumir();
+
+
+
 }

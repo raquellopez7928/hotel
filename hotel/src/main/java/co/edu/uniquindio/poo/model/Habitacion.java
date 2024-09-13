@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,7 @@ public class Habitacion {
     private double precio;
     private TipoHabitacion tipoHabitacion;
     private ArrayList<Servicio> servicios;
+
     
     /**
      * método constructor de la clase Habitacion
@@ -37,12 +38,6 @@ public class Habitacion {
         }
         servicios.add(servicio);
         System.out.println("Servicio añadido a la habitación " + this.numero);
-    }
-
-    public void consumirServicios() {
-        for (Servicio servicio : servicios) {
-            servicio.consumir();
-        }
     }
 
     /**
@@ -119,5 +114,8 @@ public class Habitacion {
         return "Habitacion [numero=" + numero + ", precio=" + precio + ", tipoHabitacion=" + tipoHabitacion
                 + ", servicios=" + servicios + "]";
     }
+
+
 }
+
 

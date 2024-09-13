@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 /**
  * Creación de del enum TipoDeHabitacion

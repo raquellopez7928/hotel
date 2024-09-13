@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo;
-import java.time.LocalDate;
+import co.edu.uniquindio.poo.model.Cliente;
+import co.edu.uniquindio.poo.model.Habitacion;
 
 
 /**
@@ -8,30 +9,45 @@ import java.time.LocalDate;
  */
 public class App {
     public static void main(String[] args) {
-        // Crear algunas habitaciones
-        Habitacion habitacion1 = new Habitacion(101, 250000.0, TipoHabitacion.DOBLE);
-        Habitacion habitacion2 = new Habitacion(102, 300000, TipoHabitacion.SUITS);
+        ClienteCRUD clienteCRUD = new ClienteCRUD();
 
-        // Crear un cliente
-        Cliente cliente1 = new Cliente("Leidy Vanesa Muñoz Bolaños", "1087643301");
-        Cliente cliente2 = new Cliente("Raquel López Aristizábal","1091884575" );
-        Cliente cliente3 = new Cliente("Lawrence Daniel Ospina Lopez", "1114541590");
+        // Crear Clientes
+        Cliente cliente1 = new Cliente("Juan Perez", "12345678");
+        Cliente cliente2 = new Cliente("Maria Gomez", "87654321");
+        clienteCRUD.crearCliente(cliente1);
+        clienteCRUD.crearCliente(cliente2);
 
-        // Crear una reserva y asociarla a una habitación
-        cliente1.crearReserva(habitacion1, LocalDate.now(), LocalDate.now().plusDays(3));
-        cliente2.crearReserva(habitacion2, LocalDate.now(), LocalDate.now().plusDays(4));
-        cliente3.crearReserva(habitacion2, LocalDate.now(), LocalDate.now().plusDays(1));
+        // Leer Cliente
+        System.out.println("Leer Cliente: " + clienteCRUD.leerCliente("12345678"));
 
-        // Añadir y consumir un servicio en la habitación
-        ServicioDeHabitacion servicio1 = new ServicioDeHabitacion("Desayuno", 15.0);
-        habitacion1.agregarServicio(servicio1);
-        ServicioDeHabitacion servicio2= new ServicioDeHabitacion("Almuerzo", 30);
-        habitacion2.agregarServicio(servicio2);
+        // Actualizar Cliente
+        clienteCRUD.actualizarCliente("12345678", "Juan Perez Actualizado");
 
-        // Listar las reservas y servicios asociados
-        cliente1.listarReservasYServicios();
-        cliente2.listarReservasYServicios();
-        cliente3.listarReservasYServicios();
-        
+        // Eliminar Cliente
+        clienteCRUD.eliminarCliente("87654321");
+
+        // Listar Clientes
+        clienteCRUD.listarClientes();
+        HabitacionCRUD habitacionCRUD = new HabitacionCRUD();
+
+        // Crear Habitaciones
+        Habitacion habitacion1 = new Habitacion(101, "simple", 100.0);
+        Habitacion habitacion2 = new Habitacion(102, "doble", 150.0);
+        habitacionCRUD.crearHabitacion(habitacion1);
+        habitacionCRUD.crearHabitacion(habitacion2);
+
+        // Leer Habitación
+        System.out.println("Leer Habitación: " + habitacionCRUD.leerHabitacion(101));
+
+        // Actualizar Habitación
+        habitacionCRUD.actualizarHabitacion(101, "suite", 200.0);
+
+        // Eliminar Habitación
+        habitacionCRUD.eliminarHabitacion(102);
+
+        // Listar Habitaciones
+        habitacionCRUD.listarHabitaciones();
+
+
     }
 }

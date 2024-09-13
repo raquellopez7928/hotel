@@ -1,4 +1,8 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model.builder;
+
+import co.edu.uniquindio.poo.model.Cliente;
+import co.edu.uniquindio.poo.model.Habitacion;
+import co.edu.uniquindio.poo.model.Reserva;
 
 import java.time.LocalDate;
 
@@ -8,10 +12,19 @@ import java.time.LocalDate;
 
 public class ReservaBuilder {
 
-    private LocalDate fechaEntrada;
-    private LocalDate fechaSalida;
-    private Habitacion habitacion;
-    private Cliente cliente;
+    protected LocalDate fechaEntrada;
+    protected LocalDate fechaSalida;
+    protected Habitacion habitacion;
+    protected Cliente cliente;
+
+    /**
+     * implementación del patrón Builder para la clase ReservaBuilder
+     * @return Reserva
+     */
+
+    public Reserva build() {
+        return new Reserva(fechaEntrada, fechaSalida, habitacion, cliente);
+    }
 
     /**
      * Set para el atributo FechaEntrada
@@ -55,15 +68,5 @@ public class ReservaBuilder {
     public ReservaBuilder setCliente(Cliente cliente) {
         this.cliente = cliente;
         return this;
-    }
-
-    /**
-     * implementación del patrón Builder para la clase ReservaBuilder
-     * @return Reserva
-     */
-
-    public Reserva build() {
-        System.out.println("Reserva creada satisfactoriamente");
-        return new Reserva(fechaEntrada, fechaSalida, habitacion, cliente);
     }
 }
